@@ -1,11 +1,108 @@
-p{
-	color:$primary-color;
+html{
+
+	font-size: 62.5%;
 }
-h1{
-	color:purple;
-	font-size:55px;
+body{
+	font: 1.4rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+
+
 }
-h3{
-	
-	color:red;
+#page-header{
+	font-size: 3rem;
+	color: $light-color;
+	background: $dark-color;
+	@extend %highlight;
 }
+
+h4{
+	color: $light-color;
+	font-size: 1.5rem;
+}
+.container, header{
+
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+header{
+	background: transparent;
+	z-index: 99999;
+    top: 5rem;
+    position:absolute;
+    left:0;
+    right:0;
+}
+
+footer{
+	background: $dark-color;
+	padding: 5rem 0;
+}
+.hero{
+	background: #111111 url('../img/concert-photo.jpg') no-repeat top center;
+	height:45vh;
+	background-size:cover;
+}
+.center{
+	@extend %center-element;
+}
+.clearfix:after {
+    content:"\0020";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+ 
+.clearfix {
+    display:block;
+}
+.search-wrap{
+	position:relative;
+}
+.search-form{
+	position: absolute;
+    top: 20vh;
+    left: 30vw;
+    padding:1.5rem;
+    width:700px;
+	label{
+	background: $dark-color;
+	color:#fff;
+	padding:1rem;
+	@extend %highlight;
+	text-align:left;
+	}
+	.search-input{
+    padding: 1.5rem;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 0px;
+    background:#d8d8d8;
+    width:100%;
+    display:inline-block;
+    margin:0;
+    height:55px;
+    }
+
+	}
+.result-item{
+	width: 30%;
+	float:left;
+	padding: 1%;
+	div{
+	color: $accent-color;
+	background: $dark-color;
+	@extend %highlight;
+	margin-top:0px;
+	}
+	h3{
+	margin:0;
+	}
+	img{
+	margin-bottom:-5px;
+	}
+	}

@@ -1,0 +1,29 @@
+.logo{
+	background: url('../img/logo.png') no-repeat;
+	width:35rem;
+	height: 10rem;
+	text-indent: -9999px;
+	float:left;
+}
+
+nav{
+	float:right;
+	padding:2rem 0;
+}
+nav li{
+	display:inline-block;
+}
+nav a{
+	display:block;
+	color:#eeeeee;
+	text-decoration: none;
+	padding: 1rem 2rem;	
+	font-weight: 900;
+	opacity:1;
+	text-transform:uppercase;
+	font-size:1.4rem;
+	font-family: inherit;
+}
+nav a:hover{
+	opacity:0.5;
+}

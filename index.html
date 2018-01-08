@@ -14,8 +14,87 @@
 </head>
 
 <body>
-<h1>Search API</h1>
-<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tristique est quis accumsan faucibus. Curabitur tempor ultrices augue, non feugiat nisi vehicula ac. In hac habitasse platea dictumst. Donec euismod ultrices neque et cursus. Integer dignissim enim quis aliquet molestie. Curabitur id elementum ipsum. Curabitur luctus massa et libero aliquam, id consectetur mi laoreet. Vestibulum ut malesuada sapien, et porttitor arcu. Maecenas dui risus, tincidunt nec orci et, varius finibus velit. Sed sodales dui in arcu tempus laoreet. Donec id augue arcu. Maecenas pulvinar nisl a felis dictum, et volutpat odio condimentum. Nam posuere auctor enim ut blandit. Duis sit amet ante finibus augue ornare fermentum sed vitae sapien. Cras vel congue mauris, hendrerit tempus nisi. Morbi volutpat nulla sit amet arcu rutrum, eu pellentesque nibh efficitur. </p>
-  <script src="js/scripts.js"></script>
+<header>
+<div class="clearfix">
+		<!-- Logo -->
+			<a href="index.html"><h1 class="logo">Musify</h1></a>
+
+			<!-- Navigaton -->
+			<nav> 
+			<ul class="menu-list">
+				<li><a href="index.html">Home</a></li>
+				<li><a>About</a></li>
+				<li><a>Connect</a></li>
+			</ul>
+
+			</nav>
+</div>
+		</header>
+
+		<!-- Hero section section -->
+		<section class="hero">
+
+				<div class="container center form">
+			<form onsubmit="return false;" class="search-form">
+				<label>Search for an artist</label>
+
+			<div class="search-wrap">
+			<input type="search" class="search-input" name="s" id="s" placeholder="ex. Foo Fighters">
+			<button class="search-submit" type="submit">
+			</button>
+		     </div>
+			</form>
+				
+			</div>
+		</section> 
+		<!-- Articles section-->
+		<section class="articles-section">
+			<div class="container" id="search-results">
+			<div id="search-header"></div>
+			<!-- First Row of articles -->
+				<div class="clearfix" >
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/cher.png"/>
+						<div><h3>Cher</h3></div>
+			
+					</article>
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/cher-loyed.png"/>
+						<div><h3>Cher Loyd</h3></div>
+	
+					</article>
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/shakira.png"/>
+						<div><h3>Shakira</h3></div>
+					
+					</article>
+				</div>
+			<!-- Second Row of articles -->
+				<div class="clearfix" >
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/Gwen.png" />
+					<div><h3>Gwen Stephanie</h3></div>
+					</article>
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/Summer.png" />
+					<div><h3>Summer Camp</h3></div>
+					</article>
+				<!-- Article -->
+					<article class="result-item">
+						<img src="img/foo.png" />
+					<div><h3>Foo Fighters</h3></div>
+					</article>
+				</div>
+				<!-- CTA -->
+				<div><a href="https://www.last.fm/home" id="load-blogs" class="btn-primary">View More on LastFM</a></div>
+			</div>
+		</section>
+		<footer><h4>Built by Fatima Sheremetyeva for DWS2</h4></footer>
+  <script src="js/script.js"></script>
 </body>
 </html>
