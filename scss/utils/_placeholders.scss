@@ -2,8 +2,15 @@
 	margin-left:auto;
 	margin-right:auto;
 }
+%center-text{
+	text-align:center;
+}
 
 %highlight{
 	padding: 1.5rem;
 	background: $dark-color;
+}
+
+%section-padding{
+	padding: 2rem 0;
 }

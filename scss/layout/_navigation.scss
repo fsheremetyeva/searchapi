@@ -23,7 +23,8 @@ nav a{
 	text-transform:uppercase;
 	font-size:1.4rem;
 	font-family: inherit;
+		&:hover{
+		color:$accent-color;
+		}
 }
-nav a:hover{
-	opacity:0.5;
-}
+

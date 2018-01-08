@@ -3,7 +3,8 @@ html{
 	font-size: 62.5%;
 }
 body{
-	font: 1.4rem/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: $body-font;
+	font-family: $helvetica;
 	margin: 0 auto;
 
 
@@ -36,15 +37,22 @@ header{
 
 footer{
 	background: $dark-color;
-	padding: 5rem 0;
+	padding: 2rem 0;
+	margin-top:5rem;
 }
 .hero{
 	background: #111111 url('../img/concert-photo.jpg') no-repeat top center;
-	height:45vh;
+	height:50vh;
 	background-size:cover;
 }
 .center{
 	@extend %center-element;
+}
+.center-text{
+	@extend %center-text;
+}
+.section-padding{
+@extend %section-padding;	
 }
 .clearfix:after {
     content:"\0020";
@@ -61,6 +69,7 @@ footer{
 }
 .search-wrap{
 	position:relative;
+	top:10px;
 }
 .search-form{
 	position: absolute;
@@ -68,41 +77,41 @@ footer{
     left: 30vw;
     padding:1.5rem;
     width:700px;
-	label{
-	background: $dark-color;
-	color:#fff;
-	padding:1rem;
-	@extend %highlight;
-	text-align:left;
-	}
-	.search-input{
-    padding: 1.5rem;
-    color: #666;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 0px;
-    background:#d8d8d8;
-    width:100%;
-    display:inline-block;
-    margin:0;
-    height:55px;
-    }
+		label{
+		background: $dark-color;
+		color:#fff;
+		padding:1rem;
+		@extend %highlight;
+		text-align:left;
+		}
+		.search-input{
+	    padding: 1.5rem;
+	    color: #666;
+	    font-size: 16px;
+	    font-weight: 400;
+	    border-radius: 0px;
+	    background:#d8d8d8;
+	    width:100%;
+	    display:inline-block;
+	    margin:0;
+	    height:55px;
+	    }
 
 	}
 .result-item{
 	width: 30%;
 	float:left;
 	padding: 1%;
-	div{
-	color: $accent-color;
-	background: $dark-color;
-	@extend %highlight;
-	margin-top:0px;
-	}
-	h3{
-	margin:0;
-	}
-	img{
-	margin-bottom:-5px;
-	}
+		div{
+		color: $accent-color;
+		background: $dark-color;
+		@extend %highlight;
+		margin-top:0px;
+		}
+		h3{
+		margin:0;
+		}
+		img{
+		margin-bottom:-5px;
+		}
 	}
