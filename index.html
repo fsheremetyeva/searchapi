@@ -2,11 +2,11 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Musify App</title>
 
-  <title>Musify App</title>
-
-  <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -19,8 +19,12 @@
 		<!-- Logo -->
 			<a href="index.html"><h1 class="logo">Musify</h1></a>
 
+     <!-- Menu toggle icon -->
+     <span class="menu-toggle"></span>
 			<!-- Navigaton -->
-			<nav> 
+			<nav id="nav">
+        <!-- Menu close -->
+    <div class="clearfix">  <span class="menu-close"></span></div>
 			<ul class="menu-list">
 				<li><a href="index.html">Home</a></li>
 				<li><a>About</a></li>
@@ -44,51 +48,21 @@
 			</button>
 		     </div>
 			</form>
-				
+
 			</div>
-		</section> 
+		</section>
 		<!-- Articles section-->
 		<section class="articles-section">
 			<div class="container" id="search-results">
 			<div class="section-padding" id="search-header"></div>
 			<!-- First Row of articles -->
-				<div class="clearfix" >
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/cher.png" alt="artist"/>
-						<div><h3>Cher</h3></div>
-			
-					</article>
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/cher-loyed.png" alt="artist"/>
-						<div><h3>Cher Loyd</h3></div>
-	
-					</article>
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/shakira.png" alt="artist"/>
-						<div><h3>Shakira</h3></div>
-					
-					</article>
-				</div>
-			<!-- Second Row of articles -->
-				<div class="clearfix" >
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/Gwen.png" alt="artist" />
-					<div><h3>Gwen Stephanie</h3></div>
-					</article>
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/Summer.png" alt="artist"/>
-					<div><h3>Summer Camp</h3></div>
-					</article>
-				<!-- Article -->
-					<article class="result-item">
-						<img src="img/foo.png" alt="artist" />
-					<div><h3>Foo Fighters</h3></div>
-					</article>
+				<div class="result-container" >
+          <!-- Save user's search query in local storage -->
+				<script>
+          var results = document.querySelector('.result-container');
+          // update DOM with items from Local storage
+          results.innerHTML = localStorage.getItem('artist-results');
+        </script>
 				</div>
 				<!-- CTA -->
 				<div class="center-text section-padding"><a href="https://www.last.fm/home" id="load-blogs" class="btn-primary">View More on LastFM</a></div>

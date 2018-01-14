@@ -4,16 +4,16 @@ var header = document.querySelector('#search-header');
 function loadResults(){
 //Create XMLHttpRequest
 // Prepare the request
-var artist = document.querySelector('#s').value;
+  var artist = document.querySelector('#s').value;
 
-header.innerHTML += '<h2><span id="page-header">Search results for '+ artist + '</span></h2>';
-var url= 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + artist + '&api_key=369799ed118f787a793b3301c86203b3&format=json';
+  header.innerHTML += '<h2><span id="page-header">Search results for '+ artist + '</span></h2>';
+  var url= 'https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + artist + '&api_key=369799ed118f787a793b3301c86203b3&format=json';
 
-xhr.open('GET', url, true);
+  xhr.open('GET', url, true);
 
-//Send the request
-xhr.send(null);
-return false;
+  //Send the request
+  xhr.send(null);
+  return false;
 
 
 }
@@ -27,40 +27,54 @@ var xhr = new XMLHttpRequest();
 //when response has loaded
 xhr.onload = function(){
 
-	//checking if server status was ok. Remove if working locally
-//if(xhr.status === 200){ // that is ok status
+  	//checking if server status was ok. Remove if working locally
+  //if(xhr.status === 200){ // that is ok status
 
 
-// create object to stor JSON data
+  // create object to stor JSON data
 
-var responseObject = JSON.parse(xhr.responseText);
-
-
-var results = document.querySelectorAll('#search-results article');
-//if it exists
-if(results.length > 0){
+  var responseObject = JSON.parse(xhr.responseText);
 
 
-for(var i=0; i < results.length; i++ ){
+  var results = document.querySelector('.result-container');
 
-var allImages = results[i].getElementsByTagName('img');
-for(var j=0; j < allImages.length; j++){
-//if has attribue src, update the value
-if(allImages[j].hasAttribute('src')){
-allImages[j].setAttribute('src', responseObject.results.artistmatches.artist[i].image[3]["#text"]);
-}	
-}
+  var newContent = "";
+  for(var i=0; i < responseObject.results.artistmatches.artist.length && i < 6; i++ ){
+    newContent += '<article class="result-item">'
+    newContent += '<img src="' + responseObject.results.artistmatches.artist[i].image[3]["#text"] + '"/>';
+    newContent += '<div><h3>' +  responseObject.results.artistmatches.artist[i].name + '</h3></div>';
+    newContent += '</article>';
+    responseObject.results.artistmatches.artist[i]
 
-//update values
-results[i].getElementsByTagName('h3')[0].innerHTML = responseObject.results.artistmatches.artist[i].name;
+  }
+  //Save results in local storage
+  localStorage.setItem('artist-results', newContent);
+  //update DOM with results
+  results.innerHTML = newContent;
 
-
-}
-
-}
 
 };
 
 //add event listener to submit button
 if(cForm != null)
 cForm.addEventListener('submit', loadResults, false);
+
+
+var showMenu = document.querySelector('.menu-toggle');
+//funcion to display nav on click
+function showNav(){
+
+  document.getElementById("nav").style.display = "block";
+}
+//add even on click event listener to show the menu
+showMenu.addEventListener('click', showNav, false);
+
+
+var hideMenu = document.querySelector('.menu-close');
+//hide menu
+function hideNav(){
+
+  document.getElementById("nav").style.display = "none";
+}
+//add even on click event listener to hide the menu
+hideMenu.addEventListener('click', hideNav, false);

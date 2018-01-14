@@ -4,6 +4,10 @@ var sass = require('gulp-sass')
 
 var browserSync = require('browser-sync').create()
 
+var postcss = require('gulp-postcss')
+
+var autoprefixer = require('autoprefixer')
+
 gulp.task('default', defaultTask)
 
 function defaultTask(done) {
@@ -13,8 +17,13 @@ function defaultTask(done) {
 
 gulp.task('scss', function(){
 
+	var processors = [
+		autoprefixer({browsers:['last 2 versions']}),
+	];
+
 	return gulp.src('./scss/*.scss')
 	.pipe(sass())
+	.pipe(postcss(processors))
 	.pipe(gulp.dest('./css'))
 	.pipe(browserSync.reload({
 		stream:true

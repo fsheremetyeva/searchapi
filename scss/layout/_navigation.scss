@@ -1,30 +1,88 @@
 .logo{
 	background: url('../img/logo.png') no-repeat;
-	width:35rem;
+	background-size:contain;
+	width:25rem;
 	height: 10rem;
 	text-indent: -9999px;
+	margin: 0 auto;
 	float:left;
+	@include mq(large){
+		width:35rem;
+		height: 10rem;
+		text-indent: -9999px;
+
+	}
 }
 
 nav{
+	display:none;
 	float:right;
 	padding:2rem 0;
+	background:$dark-color;
+	position: fixed;
+	width: 100%;
+	height:auto;
+	z-index: 9999999;
+	overflow: auto;
+	text-align: right;
+	top:0;
+	left:0;
+	@include mq(large){
+		display:block;
+		background:transparent;
+		position: static;
+		width: auto;
+		height: auto;
+		z-index: 9999999;
+		overflow: auto;
+		text-align: center;
+	}
+}
+.menu-toggle{
+	background:url('../img/hamburger.png');
+	background-size:contain;
+	width: 5rem;
+	height:5rem;
+	background-repeat: no-repeat;
+	float:right;
+	cursor:pointer;
+	@include mq(large){
+		display:none;
+	}
+}
+.menu-close{
+	background:url('../img/close.png');
+	background-size:contain;
+	width: 3rem;
+	height:3rem;
+	background-repeat: no-repeat;
+	float:right;
+	margin-right:3rem;
+	cursor:pointer;
+	@include mq(large){
+		display:none;
+	}
 }
 nav li{
-	display:inline-block;
+	display:block;
+	@include mq(large){
+	  display:inline-block;
+}
 }
 nav a{
 	display:block;
 	color:#eeeeee;
 	text-decoration: none;
-	padding: 1rem 2rem;	
+	padding: 1rem 2rem;
 	font-weight: 900;
 	opacity:1;
 	text-transform:uppercase;
-	font-size:1.4rem;
+	font-size:2rem;
 	font-family: inherit;
 		&:hover{
 		color:$accent-color;
 		}
+		@include mq(large){
+			font-size:1.4rem;
+		}
 }
-
