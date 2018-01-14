@@ -154,6 +154,10 @@ input {
   text-indent: -9999px;
   margin: 0 auto;
   float: left; }
+  @media (min-width: 800px) {
+    .logo {
+      height: 10rem;
+      text-indent: -9999px; } }
   @media (min-width: 1200px) {
     .logo {
       width: 35rem;
@@ -163,7 +167,6 @@ input {
 nav {
   display: none;
   float: right;
-  padding: 2rem 0;
   background: #2b2b2b;
   position: fixed;
   width: 100%;
@@ -172,8 +175,9 @@ nav {
   overflow: auto;
   text-align: right;
   top: 0;
-  left: 0; }
-  @media (min-width: 1200px) {
+  left: 0;
+  padding: 2rem 0; }
+  @media (min-width: 800px) {
     nav {
       display: block;
       background: transparent;
@@ -182,7 +186,11 @@ nav {
       height: auto;
       z-index: 9999999;
       overflow: auto;
-      text-align: center; } }
+      text-align: center;
+      padding: 1rem 0; } }
+  @media (min-width: 1200px) {
+    nav {
+      padding: 2rem 0; } }
 
 .menu-toggle {
   background: url("../img/hamburger.png");
@@ -192,7 +200,7 @@ nav {
   background-repeat: no-repeat;
   float: right;
   cursor: pointer; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     .menu-toggle {
       display: none; } }
 
@@ -205,13 +213,13 @@ nav {
   float: right;
   margin-right: 3rem;
   cursor: pointer; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     .menu-close {
       display: none; } }
 
 nav li {
   display: block; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     nav li {
       display: inline-block; } }
 
@@ -223,13 +231,13 @@ nav a {
   font-weight: 900;
   opacity: 1;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-family: inherit; }
   nav a:hover {
     color: #f5a623; }
   @media (min-width: 1200px) {
     nav a {
-      font-size: 1.4rem; } }
+      font-size: 2rem; } }
 
 button.search-submit {
   cursor: pointer;

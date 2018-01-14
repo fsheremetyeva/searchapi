@@ -6,6 +6,11 @@
 	text-indent: -9999px;
 	margin: 0 auto;
 	float:left;
+	@include mq(medium){
+		height: 10rem;
+		text-indent: -9999px;
+
+	}
 	@include mq(large){
 		width:35rem;
 		height: 10rem;
@@ -17,7 +22,6 @@
 nav{
 	display:none;
 	float:right;
-	padding:2rem 0;
 	background:$dark-color;
 	position: fixed;
 	width: 100%;
@@ -27,7 +31,8 @@ nav{
 	text-align: right;
 	top:0;
 	left:0;
-	@include mq(large){
+	padding:2rem 0;
+	@include mq(medium){
 		display:block;
 		background:transparent;
 		position: static;
@@ -36,6 +41,10 @@ nav{
 		z-index: 9999999;
 		overflow: auto;
 		text-align: center;
+		padding:1rem 0;
+	}
+	@include mq(large){
+			padding:2rem 0;
 	}
 }
 .menu-toggle{
@@ -46,7 +55,7 @@ nav{
 	background-repeat: no-repeat;
 	float:right;
 	cursor:pointer;
-	@include mq(large){
+	@include mq(medium){
 		display:none;
 	}
 }
@@ -59,13 +68,13 @@ nav{
 	float:right;
 	margin-right:3rem;
 	cursor:pointer;
-	@include mq(large){
+	@include mq(medium){
 		display:none;
 	}
 }
 nav li{
 	display:block;
-	@include mq(large){
+	@include mq(medium){
 	  display:inline-block;
 }
 }
@@ -77,12 +86,12 @@ nav a{
 	font-weight: 900;
 	opacity:1;
 	text-transform:uppercase;
-	font-size:2rem;
+	font-size:1.4rem;
 	font-family: inherit;
 		&:hover{
 		color:$accent-color;
 		}
 		@include mq(large){
-			font-size:1.4rem;
+			font-size:2rem;
 		}
 }
